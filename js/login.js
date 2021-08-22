@@ -1,7 +1,11 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", function (e) {
+    console.log('hola')
+});
+
+function login(userName, password) {
     if (userName.trim() === "" || password.trim() === "") { //Chequea que el dato recibido no esté vacío. 
         //El método trim elimina los espacios en blanco al inicio y al final del mismo.
         alert("Error: usuario o contraseña vacio");
@@ -11,5 +15,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         sessionStorage.setItem("user", userName.trim());
         location.href = "index.html";
         //getItem obtiene el dato almacenado en la posición "usuario"
-    };
-});
+    }
+}
