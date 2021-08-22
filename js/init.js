@@ -48,4 +48,5 @@ document.addEventListener("DOMContentLoaded", function(e){
   var pass = localStorage.getItem("password");
   if (!usuario || !pass) {
     location.href="login.html";
+  };
 });

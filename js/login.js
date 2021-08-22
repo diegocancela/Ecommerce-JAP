@@ -11,4 +11,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         sessionStorage.setItem("user", userName.trim());
         location.href = "index.html";
         //getItem obtiene el dato almacenado en la posición "usuario"
+    };
 });
