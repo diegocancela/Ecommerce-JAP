@@ -26,13 +26,67 @@
       <button onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html';"> Desconectar</button>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container mt-5">
+    <div class="text-center p-4">
+      <h2>Descripción del producto</h2>
+      <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera de los productios
+        seleccionadas previamente, siempre se visualizará la presente: <strong id='categoryName'></strong>.</p>
     </div>
+    <h3 id="productName"></h3>
+    <hr class="my-3">
+    <dl>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="productDescription"></p>
+      </dd>
+
+      <dt>Costo del producto</dt>
+      <dd>
+        <p id="productCost"></p>
+      </dd>
+
+      <dt>Moneda</dt>
+      <dd>
+        <p id="productCurrrency"></p>
+      </dd>
+
+      <dt>Cantidad de unidades vendidas</dt>
+      <dd>
+        <p id="soldCountProduct"></p>
+      </dd>
+
+      <dt>Categoria</dt>
+      <dd>
+        <p id="productCategory"></p>
+      </dd>
+
+      <dt>Imágenes</dt>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+        </div>
+      </dd>
+    </dl>
+    <div class="container">
+      <div class="row">
+        <div class="list-group" id="prod-list-container">
+
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>Dejanos tu opinion!</h2>
+      <form action="">
+        <label for="fname">Usuario:</label><br>
+        <input type="text" id="" value=""><br>
+        <label for="lname">Descripcion:</label><br>
+        <p><textarea id=""></textarea></p>
+        <label for="lname">Puntuacion:</label><br>
+        <input type="number" id=""  min="1" max="5"><br><br>
+        <input type="submit" value="Enviar">
+      </form> 
+    </div>
+  </div>
+  <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
   </div>
   <footer class="text-muted">
     <div class="container">
