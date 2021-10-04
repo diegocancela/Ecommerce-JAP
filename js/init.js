@@ -49,4 +49,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   if (!usuario || !pass) {
     location.href="login.html";
   };
+
+  document.getElementById("usernameButton").innerHTML=localStorage.getItem("user");
+  
 });

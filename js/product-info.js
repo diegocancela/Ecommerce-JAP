@@ -2,10 +2,11 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+    let relatedProductos;
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             let product = resultObj.data;
-
+            relatedProductos = product.relatedProducts;
             let nameHtml = document.getElementById("productName");
             let descriptionHtml = document.getElementById("productDescription");
             let costHtml = document.getElementById("productCost");
@@ -50,6 +51,27 @@ document.addEventListener("DOMContentLoaded", function (e) {
             }
             htmlContentToAppend += ` <p></p>`
             document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
+        }
+    });
+
+    getJSONData(PRODUCTS_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            let allProducts = resultObj.data;
+            let htmlContentToAppend = "";
+            for (let i = 0; i < allProducts.length; i++) {
+                if (relatedProductos.includes(i)) {
+                    let currentProduct = allProducts[i];
+                    htmlContentToAppend += `
+                    <div class="col-lg-3 col-md-4 col-6">
+                         <div type="button" class="d-block mb-4 h-100">
+                                <p>` + currentProduct.name +`</p>
+                             <img class="img-fluid img-thumbnail" src="` + currentProduct.imgSrc + `" alt="">
+                         </div>
+                     </div>
+                    `
+                }
+            }
+            document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
         }
     });
 });
