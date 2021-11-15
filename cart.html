@@ -59,12 +59,71 @@
       <div class="row">
         <div class="list-group" id="cart-list-container">
         </div>
-        <div>
-          <p>Subtotal: <span id='subTotalValue'></span> UYU</p>
-          <p>Total: <span id='totalValue'></span> UYU</p>
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment">
+        Forma de pago
+      </button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shipment">
+        Metodo de envio
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="payment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Seleccionar forma de pago:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <input type="radio" id="creditCard" name="payment" value="Tarjeta de Credito">
+                  <label for="html">Tarjeta de Credito</label><br>
+                  <input type="radio" id="transfer" name="payment" value="Transferencia Bancaria">
+                  <label for="css">Transferencia Bancaria</label><br>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
         </div>
       </div>
-      <button>Comprar!</button>
+      <!-- Modal -->
+      <div class="modal fade" id="shipment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Seleccione el tipo de envio:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <input type="radio" id="Premium" name="shipment" value="Premium" onchange="calculatePrice()">
+                  <label for="html">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label><br>
+                  <input type="radio" id="Express" name="shipment" value="Express" onchange="calculatePrice()">
+                  <label for="css">Express (5-8 días) - Costo del 7% sobre el subtotal.</label><br>
+                  <input type="radio" id="Standard" name="shipment" value="Standard" onchange="calculatePrice()">
+                  <label for="css">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label><br>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div>
+        <p>Subtotal: <span id='subTotalValue'></span> UYU</p>
+        <p>Total: <span id='totalValue'></span> UYU</p>
+      </div>
+      <button onclick="validarCompra()">Comprar!</button>
     </div>
 
   </main>

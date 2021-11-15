@@ -53,13 +53,19 @@
         </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <div class="container mt-5">
+    <h2>Mi perfil</h2>
+    <label for="fname">Nombre:</label><br>
+    <input type="text" id="profileName" name="" value=""><br>
+    <label for="lname">Apellido:</label><br>
+    <input type="text" id="profileSurname" name="" value=""><br>
+    <label for="lname">Edad:</label><br>
+    <input type="number" id="profileAge" name="" class="text-muted"  min="1" value=""><br>
+    <label for="lname">E-mail:</label><br>
+    <input type="text" id="profileEmail" name="" value=""><br>
+    <label for="lname">Telefono:</label><br>
+    <input type="text" id="profilePhone" name="" value=""><br>
+    <input type="submit" value="Enviar" onclick="cargarDatos()">
   </div>
   <footer class="text-muted bg-light">
     <div class="container">
